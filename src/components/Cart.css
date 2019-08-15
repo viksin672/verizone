@@ -1,0 +1,45 @@
+.d1{
+    padding-top: 6%;
+}
+
+.hed1{
+    color: white;
+    background-color: black;
+    padding-left: 3%;
+}
+
+.hed2{
+    font-size: 10px;
+    padding-left: 30px;
+}
+
+.di1{
+    padding-left: 20px;
+}
+
+.t1{
+    font-size: 30px;
+}
+
+.con{
+    padding-top: 14%;
+}
+.b1{
+    border-radius: 45px;
+}
+.sm1{
+    font-size: 10px;
+}
+.b2{
+    padding-left: 50px;
+    
+}
+.container{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+}
+
+.price{
+    padding-left: 200px;
+}

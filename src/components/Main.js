@@ -1,38 +1,40 @@
 import React from "react";
 import { Switch, Route,withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 import Cart from "./Cart";
-import ProdList from "./ProdList";
-import Cart1 from "./Cart1";
+import { removeError } from "../store/actions/errors";
 
 
-const Main = () => {
+const Main = (props) => {
+  const {errors, removeError,items}= props;
   return (
     <div >
         <Switch>
         <Route
           exact
           path="/"
-          component={ Cart }
-        />
-        <Route
-          exact
-          path="/prodlist"
-          component={ ProdList }
-        />
-         <Route
-          exact
-          path="/cart1/:id1/:id2/:id3"
-          component={Cart1}
+          render={props => {
+            return (
+              <Cart
+                removeError={removeError}
+                errors={errors}
+                {...props}
+              />
+            );
+          }}
         />
         </Switch>
-       
-       
-        
-      
     </div>
   );
 };
 
+function mapStateToProps(state) {
+  return {
+    items:state.items,
+    errors: state.errors
+  };
+}
 
-
-export default Main ;
+export default withRouter(
+  connect(mapStateToProps, { removeError })(Main)
+);
